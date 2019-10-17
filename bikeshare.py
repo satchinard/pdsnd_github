@@ -28,21 +28,30 @@ def get_filters():
     """
     city = ''
     while city not in CITY_DATA.keys():
-        city = input('\nWhat city datas would you like to view ? Enter the name (chicago, new york city, washington): ').lower()
+        try:
+            city = input('\nWhat city datas would you like to view ? Enter the name (chicago, new york city, washington): ').lower()
+        except:
+            print("Oops! You haven't entered a city name.")
 
     """
     Get user input for month
     """
     month = ''
     while month not in ('all', 'january', 'february', 'march', 'april', 'may', 'june'):
-        month = input('\nView data for wich month ? Enter the name (all, january, february, march, april, may, june): ').lower()
+        try:
+            month = input('\nView data for wich month ? Enter the name (all, january, february, march, april, may, june): ').lower()
+        except:
+            print("Oops! You haven't entered a month name.")
 
     """
     Get user input for day of week
     """
     day = ''
     while day not in ('all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'):
-        day = input('\nView data for wich day ? Enter the name (all, monday, tuesday, wednesday, thursday, friday, saturday, sunday): ').lower()
+        try:
+            day = input('\nView data for wich day ? Enter the name (all, monday, tuesday, wednesday, thursday, friday, saturday, sunday): ').lower()
+        except:
+            print("Oops! You haven't entered a day of week name.")
 
     print('-'*40)
     return city, month, day
