@@ -12,7 +12,7 @@ Thanks to the rise in information technologies, it is easy for a user of the sys
 
 In this project, you will use data provided by [Motivate](https://www.motivateco.com/), a bike share system provider for many major cities in the United States, to uncover bike share usage patterns. You will compare the system usage between three large cities: Chicago, New York City, and Washington, DC.
 
-**The Datasets**
+#### The Datasets
 
 Randomly selected data files contain the same core six (6) columns:
 
@@ -29,39 +29,43 @@ Some cities files also have the following two columns:
 
 **Gender** and **Birth Year**
 
-**Statistics Computed**
+##### Statistics Computed
 
 You will learn about bike share use in cities by computing a variety of descriptive statistics. This project will provide the following information:
 
-**#1 Popular times of travel (i.e., occurs most often in the start time)**
+* 1 Popular times of travel (i.e., occurs most often in the start time)**
 
-most common month
-most common day of week
-most common hour of day
+ - most common month
+ - most common day of week
+ - most common hour of day
 
-**#2 Popular stations and trip**
 
-most common start station
-most common end station
-most common trip from start to end (i.e., most frequent combination of start station and end station)
+* 2 Popular stations and trip
 
-**#3 Trip duration**
+ - most common start station
+ - most common end station
+ - most common trip from start to end (i.e., most frequent combination of start station and end station)
 
-total travel time
-average travel time
 
-**#4 User info**
+* 3 Trip duration
 
-counts of each user type
-counts of each gender (only available for NYC and Chicago)
-earliest, most recent, most common year of birth (only available for NYC and Chicago)
+ - total travel time
+ - average travel time
+
+
+* 4 User info
+
+ - counts of each user type
+ - counts of each gender (only available for NYC and Chicago)
+ - earliest, most recent, most common year of birth (only available for NYC and Chicago)
 
 ### Files used
-bikeshare.py
+bikeshare.py contains the Python code.
+
 You will need the three city dataset files too:
-chicago.csv
-new_york_city.csv
-washington.csv
+ - chicago.csv
+ - new_york_city.csv
+ - washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Feel free to update the code to fit your objectives.

@@ -2,6 +2,13 @@ import time
 import pandas as pd
 import numpy as np
 
+"""
+Files used to display datas
+
+chicago.csv for Chicago city
+new_york_city.csv for New York city
+washington.csv for Washington
+"""
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
@@ -16,19 +23,25 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    """
+    Get user input for the city
+    """
     city = ''
     while city not in CITY_DATA.keys():
-        city = input('\nWhat city datas would you like to view ? Enter the name (chicago, new york city, washington): ').lower()   
+        city = input('\nWhat city datas would you like to view ? Enter the name (chicago, new york city, washington): ').lower()
 
-    # TO DO: get user input for month (all, january, february, ... , june)
+    """
+    Get user input for month
+    """
     month = ''
     while month not in ('all', 'january', 'february', 'march', 'april', 'may', 'june'):
         month = input('\nView data for wich month ? Enter the name (all, january, february, march, april, may, june): ').lower()
 
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    """
+    Get user input for day of week
+    """
     day = ''
-    while day not in ('all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'): 
+    while day not in ('all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'):
         day = input('\nView data for wich day ? Enter the name (all, monday, tuesday, wednesday, thursday, friday, saturday, sunday): ').lower()
 
     print('-'*40)
@@ -53,7 +66,7 @@ def load_data(city, month, day):
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
     # extract month and day of week from Start Time to create new columns
-    df['hour'] = df['Start Time'].dt.hour 
+    df['hour'] = df['Start Time'].dt.hour
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
 
@@ -143,19 +156,19 @@ def user_stats(df):
     except:
         print('\nGender counts : None')
 
-    # TO DO: Display earliest, most recent, and most common year of birth   
+    # TO DO: Display earliest, most recent, and most common year of birth
     try:
         print('\nEarliest year of birth : \n{}'
             .format(df[df['Birth Year'] == df['Birth Year'].min()]['Birth Year']))
     except:
         print('\nEarliest year of birth : None')
-    
+
     try:
         print('\nMost common year of birth : \n{}'
             .format(df['Birth Year'].value_counts().idxmax()))
     except:
         print('\nMost common year of birth : None')
-    
+
     try:
         print('\nMost recent year of birth : \n{}'
             .format(df[df['Birth Year'] == df['Birth Year'].max()]['Birth Year']))
@@ -165,10 +178,10 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-    
+
 def show_data(df):
 	"""Displays datas on bikeshare users."""
-	
+
     row_count = 0
     while True:
         print_again = input('\nWould you like to print datas ? Enter yes or no. \n').lower()
@@ -186,7 +199,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        
+
         show_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
